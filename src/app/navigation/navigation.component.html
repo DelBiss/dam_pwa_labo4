@@ -1,0 +1,8 @@
+<nav mat-tab-nav-bar>
+    <a mat-tab-link
+        *ngFor="let measure of measures"
+        routerLink="{{measure}}"
+    >
+        {{measure|titlecase}}
+    </a>
+  </nav>

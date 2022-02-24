@@ -1,0 +1,12 @@
+.convertion_card{
+    margin-inline: auto;
+    margin-block: 20px;
+    padding-inline: 20px;
+    max-width: 500px;
+}
+.convertion_content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 3rem;
+}
