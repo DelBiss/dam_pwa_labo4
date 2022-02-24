@@ -5,7 +5,7 @@ import { ConvertionComponent } from './convertion/convertion.component';
 const routes: Routes = [
   // {path:'',pathMatch:'full', redirectTo:'poids'},
   // { path: 'poids', data: {view: 'poids'}, component: ConvertionComponent },
-  { path: ':view',  component: ConvertionComponent }
+  { path: ':view',pathMatch:'full',  component: ConvertionComponent }
 ];
 
 @NgModule({
