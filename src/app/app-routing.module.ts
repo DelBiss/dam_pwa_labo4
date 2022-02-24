@@ -3,9 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { ConvertionComponent } from './convertion/convertion.component';
 
 const routes: Routes = [
-  // {path:'',pathMatch:'full', redirectTo:'poids'},
+  {path:'',pathMatch:'full', redirectTo:'mass'},
   // { path: 'poids', data: {view: 'poids'}, component: ConvertionComponent },
-  { path: ':view',pathMatch:'full',  component: ConvertionComponent }
+  { path: ':view',  component: ConvertionComponent }
 ];
 
 @NgModule({
