@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
-import configMeasurements, { volume,mass, temperature,illuminance, length, pieces, power, speed, time, AllMeasures, allMeasures} from './convert-units';
+import { volume,mass, temperature,illuminance, length, pieces, power, speed, time,  Measure} from './convert-units';
+import { ConverterSystem } from './myConverter';
 
 @Injectable({
   providedIn: 'root'
@@ -7,7 +8,7 @@ import configMeasurements, { volume,mass, temperature,illuminance, length, piece
 export class ConvertionService {
   private _convert;
   constructor(/* private _convert:convert.Convert */) {
-    const mMeasures = {
+    const mMeasures:Record<string,Measure<string,string>>= {
       mass,
       length,
       temperature,
@@ -18,26 +19,19 @@ export class ConvertionService {
       power,
       time
     }
+    this._convert = new ConverterSystem(mMeasures)
 
-    // @ts-ignore
-    this._convert = configMeasurements(mMeasures)
-    // const myUnit = myConverter().measures()
-    // console.log("service constructor",myConverter().list(myUnit[0]))
-  //   const differentConvert = configMeasurements(
-  //     );
    }
 
    getMeasures(){
-     return this._convert().measures()
+     return this._convert.getMeasure();
    }
-  /**
-   * test
-   */
-  test(value:number):number {
-    return value * 10
-  }
 
-  getService(view:string){
-    console.log("Asked for a nsew sesvice:", view)
-  }
+   getList(measure:string){
+     return this._convert.getMeasureConverter(measure);
+   }
+  
+   getConverter(measure:any){
+     const converter = {};
+   }
 }

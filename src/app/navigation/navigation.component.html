@@ -1,7 +1,9 @@
-<nav mat-tab-nav-bar>
+<nav mat-tab-nav-bar [backgroundColor]="'accent'">
     <a mat-tab-link
         *ngFor="let measure of measures"
         routerLink="{{measure}}"
+        routerLinkActive #rla="routerLinkActive"
+        [active]="rla.isActive"
     >
         {{measure|titlecase}}
     </a>

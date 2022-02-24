@@ -19,12 +19,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { ConvertionComponent } from './convertion/convertion.component';
 import {MatTabsModule} from '@angular/material/tabs';
 import { NavigationComponent } from './navigation/navigation.component';
+import { MeasureComponent } from './measure/measure.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ConvertionComponent,
-    NavigationComponent
+    NavigationComponent,
+    MeasureComponent
   ],
   imports: [
     BrowserModule,

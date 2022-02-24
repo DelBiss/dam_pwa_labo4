@@ -2,7 +2,12 @@ import { Measure, Unit } from './../index';
 export type MassUnits = MassMetricUnits | MassImperialUnits;
 export type MassSystems = 'metric' | 'imperial';
 
-export type MassMetricUnits = 'mcg' | 'mg' | 'g' | 'kg' | 'mt';
+export type MassMetricUnits = 
+  'mcg' |
+  'mg' | 
+  'g' | 
+  'kg' | 
+  'mt';
 export type MassImperialUnits = 'oz' | 'lb' | 't';
 
 const metric: Record<MassMetricUnits, Unit> = {

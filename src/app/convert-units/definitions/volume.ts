@@ -3,21 +3,22 @@ export type VolumeUnits = VolumeMetricUnits | VolumeImperialUnits;
 export type VolumeSystems = 'metric' | 'imperial';
 
 export type VolumeMetricUnits =
-  | 'mm3'
+  // | 'mm3'
   | 'cm3'
   | 'ml'
   | 'l'
-  | 'kl'
-  | 'm3'
-  | 'km3'
-  | 'cl'
-  | 'dl'
-  | 'krm'
-  | 'tsk'
-  | 'msk'
-  | 'kkp'
-  | 'glas'
-  | 'kanna';
+  // | 'kl'
+  // | 'm3'
+  // | 'km3'
+  // | 'cl'
+  // | 'dl'
+  // | 'krm'
+  // | 'tsk'
+  // | 'msk'
+  // | 'kkp'
+  // | 'glas'
+  // | 'kanna'
+  ;
 
 export type VolumeImperialUnits =
   | 'tsp'
@@ -28,17 +29,18 @@ export type VolumeImperialUnits =
   | 'pnt'
   | 'qt'
   | 'gal'
-  | 'ft3'
-  | 'yd3';
+  // | 'ft3'
+  // | 'yd3'
+  ;
 
 const metric: Record<VolumeMetricUnits, Unit> = {
-  mm3: {
-    name: {
-      singular: 'Cubic Millimeter',
-      plural: 'Cubic Millimeters',
-    },
-    to_anchor: 1 / 1000000,
-  },
+  // mm3: {
+  //   name: {
+  //     singular: 'Cubic Millimeter',
+  //     plural: 'Cubic Millimeters',
+  //   },
+  //   to_anchor: 1 / 1000000,
+  // },
   cm3: {
     name: {
       singular: 'Cubic Centimeter',
@@ -53,20 +55,20 @@ const metric: Record<VolumeMetricUnits, Unit> = {
     },
     to_anchor: 1 / 1000,
   },
-  cl: {
-    name: {
-      singular: 'Centilitre',
-      plural: 'Centilitres',
-    },
-    to_anchor: 1 / 100,
-  },
-  dl: {
-    name: {
-      singular: 'Decilitre',
-      plural: 'Decilitres',
-    },
-    to_anchor: 1 / 10,
-  },
+  // cl: {
+  //   name: {
+  //     singular: 'Centilitre',
+  //     plural: 'Centilitres',
+  //   },
+  //   to_anchor: 1 / 100,
+  // },
+  // dl: {
+  //   name: {
+  //     singular: 'Decilitre',
+  //     plural: 'Decilitres',
+  //   },
+  //   to_anchor: 1 / 10,
+  // },
   l: {
     name: {
       singular: 'Litre',
@@ -74,71 +76,71 @@ const metric: Record<VolumeMetricUnits, Unit> = {
     },
     to_anchor: 1,
   },
-  kl: {
-    name: {
-      singular: 'Kilolitre',
-      plural: 'Kilolitres',
-    },
-    to_anchor: 1000,
-  },
-  m3: {
-    name: {
-      singular: 'Cubic meter',
-      plural: 'Cubic meters',
-    },
-    to_anchor: 1000,
-  },
-  km3: {
-    name: {
-      singular: 'Cubic kilometer',
-      plural: 'Cubic kilometers',
-    },
-    to_anchor: 1000000000000,
-  },
+  // kl: {
+  //   name: {
+  //     singular: 'Kilolitre',
+  //     plural: 'Kilolitres',
+  //   },
+  //   to_anchor: 1000,
+  // },
+  // m3: {
+  //   name: {
+  //     singular: 'Cubic meter',
+  //     plural: 'Cubic meters',
+  //   },
+  //   to_anchor: 1000,
+  // },
+  // km3: {
+  //   name: {
+  //     singular: 'Cubic kilometer',
+  //     plural: 'Cubic kilometers',
+  //   },
+  //   to_anchor: 1000000000000,
+  // },
 
-  // Swedish units
-  krm: {
-    name: {
-      singular: 'Kryddmått',
-      plural: 'Kryddmått',
-    },
-    to_anchor: 1 / 1000,
-  },
-  tsk: {
-    name: {
-      singular: 'Tesked',
-      plural: 'Teskedar',
-    },
-    to_anchor: 5 / 1000,
-  },
-  msk: {
-    name: {
-      singular: 'Matsked',
-      plural: 'Matskedar',
-    },
-    to_anchor: 15 / 1000,
-  },
-  kkp: {
-    name: {
-      singular: 'Kaffekopp',
-      plural: 'Kaffekoppar',
-    },
-    to_anchor: 150 / 1000,
-  },
-  glas: {
-    name: {
-      singular: 'Glas',
-      plural: 'Glas',
-    },
-    to_anchor: 200 / 1000,
-  },
-  kanna: {
-    name: {
-      singular: 'Kanna',
-      plural: 'Kannor',
-    },
-    to_anchor: 2.617,
-  },
+  // // Swedish units
+  // krm: {
+  //   name: {
+  //     singular: 'Kryddmått',
+  //     plural: 'Kryddmått',
+  //   },
+  //   to_anchor: 1 / 1000,
+  // },
+  // tsk: {
+  //   name: {
+  //     singular: 'Tesked',
+  //     plural: 'Teskedar',
+  //   },
+  //   to_anchor: 5 / 1000,
+  // },
+  // msk: {
+  //   name: {
+  //     singular: 'Matsked',
+  //     plural: 'Matskedar',
+  //   },
+  //   to_anchor: 15 / 1000,
+  // },
+  // kkp: {
+  //   name: {
+  //     singular: 'Kaffekopp',
+  //     plural: 'Kaffekoppar',
+  //   },
+  //   to_anchor: 150 / 1000,
+  // },
+  // glas: {
+  //   name: {
+  //     singular: 'Glas',
+  //     plural: 'Glas',
+  //   },
+  //   to_anchor: 200 / 1000,
+  // },
+  // kanna: {
+  //   name: {
+  //     singular: 'Kanna',
+  //     plural: 'Kannor',
+  //   },
+  //   to_anchor: 2.617,
+  // },
 };
 
 const imperial: Record<VolumeImperialUnits, Unit> = {
@@ -198,20 +200,20 @@ const imperial: Record<VolumeImperialUnits, Unit> = {
     },
     to_anchor: 128,
   },
-  ft3: {
-    name: {
-      singular: 'Cubic foot',
-      plural: 'Cubic feet',
-    },
-    to_anchor: 957.506,
-  },
-  yd3: {
-    name: {
-      singular: 'Cubic yard',
-      plural: 'Cubic yards',
-    },
-    to_anchor: 25852.7,
-  },
+  // ft3: {
+  //   name: {
+  //     singular: 'Cubic foot',
+  //     plural: 'Cubic feet',
+  //   },
+  //   to_anchor: 957.506,
+  // },
+  // yd3: {
+  //   name: {
+  //     singular: 'Cubic yard',
+  //     plural: 'Cubic yards',
+  //   },
+  //   to_anchor: 25852.7,
+  // },
 };
 
 const measure: Measure<VolumeSystems, VolumeUnits> = {

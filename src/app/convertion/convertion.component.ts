@@ -1,7 +1,8 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ConvertionService } from '../convertion.service';
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { switchMap } from 'rxjs';
+import { Subject, switchMap } from 'rxjs';
+import { UnitConverter } from '../myConverter';
 
 @Component({
   selector: 'app-convertion',
@@ -10,8 +11,11 @@ import { switchMap } from 'rxjs';
 })
 export class ConvertionComponent implements OnInit, OnDestroy {
   public view:string = "poids";
-  public left:string = "";
-  public right:string = "";
+  public measureDetails:UnitConverter[] = [];
+ 
+  ClearEventsSubject: Subject<void> = new Subject<void>();
+
+  
   constructor(
     private  _convertion:ConvertionService,
     private route: ActivatedRoute) { }
@@ -26,17 +30,14 @@ export class ConvertionComponent implements OnInit, OnDestroy {
             next: x=>{
                 console.log(x.get('view'));
                 this.view=x.get('view')??"";
+                this.measureDetails = this._convertion.getList(this.view).getUnits()
             }
         }
     );
   }
 
-  onChangeLeft(newValue: string) {
-    console.log(newValue);
-    this.right = this._convertion.test(parseFloat(newValue)).toString()
+  emitClearEvent() {
+    this.ClearEventsSubject.next();
   }
-  onChangeRight(newValue: any) {
-    console.log(newValue);
-    this.left = newValue
-  }
+
 }
