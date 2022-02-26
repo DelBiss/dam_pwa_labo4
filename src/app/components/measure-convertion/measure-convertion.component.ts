@@ -1,8 +1,10 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ConvertionService } from '../../services/convertion.service';
+
 import { ActivatedRoute, ParamMap } from '@angular/router';
-import { Subject, switchMap } from 'rxjs';
-import { UnitConverter } from '../../services/myConverter';
+import { Subject} from 'rxjs';
+import { UnitConverter } from '../../services/convert-units/interface';
+import { ConvertUnitsService } from 'src/app/services/convert-units/convert-units.service';
+import { AllMeasures } from 'src/app/services/convert-units/convert-units-module';
 
 @Component({
   selector: 'measure-convertion',
@@ -10,14 +12,14 @@ import { UnitConverter } from '../../services/myConverter';
   styleUrls: ['./measure-convertion.component.css']
 })
 export class MeasureConvertionComponent implements OnInit, OnDestroy {
-  public view:string = "poids";
+  public view:AllMeasures = "mass";
   public measureDetails:UnitConverter[] = [];
  
   ClearEventsSubject: Subject<void> = new Subject<void>();
 
   
   constructor(
-    private  _convertion:ConvertionService,
+    private  _convertion:ConvertUnitsService,
     private route: ActivatedRoute) { }
   
   ngOnDestroy(): void {
@@ -28,8 +30,8 @@ export class MeasureConvertionComponent implements OnInit, OnDestroy {
     this.route.paramMap.subscribe(
         {
             next: params=>{
-                this.view=params.get('measure-type')??"";
-                this.measureDetails = this._convertion.getList(this.view).getUnits()
+                this.view=(params.get('measure-type')??"") as AllMeasures;
+                this.measureDetails = this._convertion.getMeasureConverter(this.view).getUnits()
             }
         }
     );

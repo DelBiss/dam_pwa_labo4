@@ -17,7 +17,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { MeasureConvertionComponent } from './components/measure-convertion/measure-convertion.component';
-import {MatTabsModule} from '@angular/material/tabs';
+import { MatTabsModule} from '@angular/material/tabs';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { MeasureUnitComponent } from './components/measure-convertion/measure-unit/measure-unit.component';
 

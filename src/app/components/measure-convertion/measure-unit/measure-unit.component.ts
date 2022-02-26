@@ -1,6 +1,6 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
-import { UnitConverter } from '../../../services/myConverter';
+import { UnitConverter } from '../../../services/convert-units/interface';
 
 @Component({
   selector: 'measure-unit',

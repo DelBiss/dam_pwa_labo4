@@ -1,24 +1,8 @@
 import { BehaviorSubject, Observer, Subscription } from "rxjs";
-import configMeasurements, { Converter, Measure, UnitDescription } from "./convert-units/convert-units-module"
+import { Converter,  UnitDescription } from "./convert-units-module"
+import { UnitConverter, UnitObserver } from "./interface";
 
 
-export interface UnitConverter {
-    description:UnitDescription
-    next:(change:number)=>void
-    subscribe:(observer: Partial<Observer<number>>)=>Subscription
-}
-
-interface item {
-    description:string
-    prix:number
-}
-
-
-
-export interface UnitObserver {
-    obs:BehaviorSubject<number>
-    unit:UnitConverter
-}
 
 export class ObservableConverter<
                 TMeasures extends string,
@@ -45,6 +29,7 @@ export class ObservableConverter<
     }
 
     private generateConverter():UnitObserver[] {
+        //Get the list of all unit in for this
         const descriptions:UnitDescription[] =this._converter().list(this._measure)
         const converters = descriptions.map(
             (d:UnitDescription)=>
@@ -77,27 +62,5 @@ export class ObservableConverter<
     }
     getUnits():UnitConverter[]{
         return this._unitConverters.map(x => x.unit);
-    }
-}
-
-export class ConverterSystem<
-                TMeasures extends string,
-                TSystems extends string,
-                TUnits extends string
-            >
-{
-    // private _measure:Partial<AllMeasureRecords>;
-    private _converter: (value?: number) => Converter<TMeasures, TSystems, TUnits>;
-
-    constructor(measures:Record<TMeasures, Measure<TSystems, TUnits>>){
-        this._converter = configMeasurements(measures)
-    }
-
-    getMeasure():TMeasures[]{
-        return this._converter().measures();
-    }
-
-    getMeasureConverter(measure:TMeasures){
-        return new ObservableConverter(this._converter,measure);
     }
 }
