@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ConvertionService } from '../convertion.service';
+import { ConvertionService } from '../../services/convertion.service';
 
 @Component({
   selector: 'app-navigation',

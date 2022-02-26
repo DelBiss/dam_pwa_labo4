@@ -16,17 +16,17 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
-import { ConvertionComponent } from './convertion/convertion.component';
+import { MeasureConvertionComponent } from './components/measure-convertion/measure-convertion.component';
 import {MatTabsModule} from '@angular/material/tabs';
-import { NavigationComponent } from './navigation/navigation.component';
-import { MeasureComponent } from './measure/measure.component';
+import { NavigationComponent } from './components/navigation/navigation.component';
+import { MeasureUnitComponent } from './components/measure-convertion/measure-unit/measure-unit.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ConvertionComponent,
+    MeasureConvertionComponent,
     NavigationComponent,
-    MeasureComponent
+    MeasureUnitComponent
   ],
   imports: [
     BrowserModule,

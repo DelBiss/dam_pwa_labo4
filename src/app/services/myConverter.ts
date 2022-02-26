@@ -1,5 +1,5 @@
 import { BehaviorSubject, Observer, Subscription } from "rxjs";
-import configMeasurements, { Converter, Measure, UnitDescription } from "./convert-units"
+import configMeasurements, { Converter, Measure, UnitDescription } from "./convert-units/convert-units-module"
 
 
 export interface UnitConverter {
@@ -7,6 +7,13 @@ export interface UnitConverter {
     next:(change:number)=>void
     subscribe:(observer: Partial<Observer<number>>)=>Subscription
 }
+
+interface item {
+    description:string
+    prix:number
+}
+
+
 
 export interface UnitObserver {
     obs:BehaviorSubject<number>

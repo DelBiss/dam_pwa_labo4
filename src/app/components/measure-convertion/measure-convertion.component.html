@@ -1,8 +1,9 @@
 
 <mat-card class="convertion_card">
+    <mat-card-title> {{view|titlecase}} </mat-card-title>
     <mat-card-content class="convertion_content">
-        <app-measure *ngFor="let detaila of measureDetails" [detail]="detaila" [clear]="ClearEventsSubject.asObservable()">
-        </app-measure>
+        <measure-unit *ngFor="let detaila of measureDetails" [detail]="detaila" [clear]="ClearEventsSubject.asObservable()">
+        </measure-unit>
     </mat-card-content>
     <mat-card-actions>
         <button mat-raised-button color="primary" (click)="emitClearEvent()" >Clear All</button>

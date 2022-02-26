@@ -2,8 +2,6 @@
     <mat-label>{{detail.description.singular|titlecase}}</mat-label>
     <input matInput  type="number" placeholder="0"  [(ngModel)] = "value" (ngModelChange)="onChange($event)" >
     <span matSuffix> {{detail.description.abbr}} </span>
-    <!-- <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
-        <mat-icon>close</mat-icon>
-      </button> -->
+   
       <mat-hint *ngIf="isTooSmall" align="start">Value is too small to show</mat-hint>
 </mat-form-field>

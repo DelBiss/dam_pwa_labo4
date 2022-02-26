@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { volume,mass, temperature,illuminance, length, pieces, power, speed, time,  Measure} from './convert-units';
+import { volume,mass, temperature,illuminance, length, pieces, power, speed, time,  Measure} from './convert-units/convert-units-module';
 import { ConverterSystem } from './myConverter';
 
 @Injectable({

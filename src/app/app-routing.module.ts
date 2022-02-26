@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ConvertionComponent } from './convertion/convertion.component';
+import { MeasureConvertionComponent } from './components/measure-convertion/measure-convertion.component';
 
 const routes: Routes = [
   {path:'',pathMatch:'full', redirectTo:'mass'},
-  // { path: 'poids', data: {view: 'poids'}, component: ConvertionComponent },
-  { path: ':view',  component: ConvertionComponent }
+  { path: ':measure-type',  component: MeasureConvertionComponent }
 ];
 
 @NgModule({

@@ -1,13 +1,13 @@
 import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
-import { UnitConverter } from '../myConverter';
+import { UnitConverter } from '../../../services/myConverter';
 
 @Component({
-  selector: 'app-measure',
-  templateUrl: './measure.component.html',
-  styleUrls: ['./measure.component.css']
+  selector: 'measure-unit',
+  templateUrl: './measure-unit.component.html',
+  styleUrls: ['./measure-unit.component.css']
 })
-export class MeasureComponent implements OnInit, OnDestroy {
+export class MeasureUnitComponent implements OnInit, OnDestroy {
   private ClearEventsSubscription: Subscription | undefined;
   private NextValueSubscription: Subscription | undefined;
   @Input() public detail:UnitConverter | undefined;

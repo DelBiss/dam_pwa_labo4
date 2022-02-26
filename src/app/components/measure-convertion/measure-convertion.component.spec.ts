@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ConvertionComponent } from './convertion.component';
+import { MeasureConvertionComponent } from './measure-convertion.component';
 
 describe('ConvertionComponent', () => {
-  let component: ConvertionComponent;
-  let fixture: ComponentFixture<ConvertionComponent>;
+  let component: MeasureConvertionComponent;
+  let fixture: ComponentFixture<MeasureConvertionComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ConvertionComponent ]
+      declarations: [ MeasureConvertionComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ConvertionComponent);
+    fixture = TestBed.createComponent(MeasureConvertionComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
